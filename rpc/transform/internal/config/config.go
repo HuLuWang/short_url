@@ -1,6 +1,7 @@
 package config
 
 import (
+	"github.com/zeromicro/go-zero/core/stores/cache"
 	"github.com/zeromicro/go-zero/zrpc"
 	"github.com/zeromicro/zero-contrib/zrpc/registry/consul"
 )
@@ -8,4 +9,7 @@ import (
 type Config struct {
 	zrpc.RpcServerConf
 	Consul consul.Conf
+
+	DataSource string
+	Cache      cache.CacheConf
 }

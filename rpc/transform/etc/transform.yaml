@@ -12,3 +12,6 @@ Consul:
   Tag:
     - tag
     - rpc
+DataSource: root:whj123@tcp(localhost:3306)/shorturl
+Cache:
+  - Host: localhost:6379
