@@ -1,0 +1,36 @@
+syntax = "v1"
+
+info (
+	title: "shorturl"
+	desc: "短链服务"
+	author: "whj"
+	email: "whj13004@gmail.com"
+)
+
+type expandReq {
+	Shorten string `form:"shorten"`
+}
+
+type expandResp {
+	Url string `json:"url"`
+}
+
+type shortenReq {
+	Url string `form:"url"`
+}
+
+type shortenResp {
+	Shorten string `json:"shorten"`
+}
+
+service shorturl-api {
+	@server(
+		handler: ShortenHandler
+	)
+	get /shorten(shortenReq) returns(shortenResp)
+	
+	@server(
+		handler: ExpandHandler
+	)
+	get /expand(expandReq) returns(expandResp)
+}

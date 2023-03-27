@@ -1,0 +1,12 @@
+Name: shorturl-api
+Host: 0.0.0.0
+Port: 8888
+
+Transform:
+  Target: consul://localhost:8500/transform.rpc?wait=14s
+
+#Transform:
+#  Etcd:
+#    Hosts:
+#      - localhost:8500
+#    Key: transform.rpc
